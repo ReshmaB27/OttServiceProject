@@ -1,0 +1,105 @@
+<app-after-login-nav-bar></app-after-login-nav-bar>
+<div class="card-container">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-text">
+              {{userData.phone}}
+            </h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><div class="col-text-start">Name<b><span  class="col-text-end">{{userData.fname}}&nbsp;{{userData.lname}}</span></b></div></li>
+            <li class="list-group-item"><div class="col-text-start">Plan<b><span  class="col-text-end">{{userData.plan}}</span></b></div></li>
+            <li class="list-group-item"><div class="col-text-start">Plan Type<b><span  class="col-text-end">{{userData.plantype}}</span></b></div></li>
+            <li class="list-group-item"><div class="col-text-start">Account<b><span  class="col-text-end">Primary Account</span></b></div></li>
+        </ul>
+    </div>
+</div>
+
+<div class="card-container3" *ngIf="newSubAccount.length > 0">
+  <div class="card3" *ngFor="let subAccount of newSubAccount">
+    <div class="card-body3">
+      <h3 class="card-text3">
+        Sub-Account {{ subAccount.subAccountId }}
+      </h3>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <!-- Display sub-account details -->
+        <div class="col-text-start">Name<b><span class="col-text-end">{{ subAccount.fname }}&nbsp;{{ subAccount.lname }}</span></b></div>
+        <!-- Add other sub-account details as needed -->
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="text-muted" *ngIf="errorMessage"><b style="font-weight: 600; padding-left: 15px; color: black;">{{ errorMessage }}</b></div>
+
+
+<div class="card-container2">
+    <div class="card2">
+        <div class="card-body2">
+            <h3 class="card-text2">
+                Link New Account
+            </h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <div class="card-subbody2">
+                <h1 class="card-subtext2">
+                    Account Details
+                </h1>
+                <p class="card-subtext2">Enter the number and verify OTP to link account.</p>
+                <!-- Add these lines inside the card-subbody2 div -->
+                <input type="text" class="text-field" placeholder="Enter First Name" [(ngModel)]="newSubAccount.fname">
+                <input type="text" class="text-field" placeholder="Enter Last Name" [(ngModel)]="newSubAccount.lname">
+                <input type="text" class="text-field" placeholder="Enter Email" [(ngModel)]="newSubAccount.email">
+                <input type="text" class="text-field" placeholder="Enter Phone Number" [(ngModel)]="newSubAccount.phone">
+
+
+                <div class="text-center">
+                    <button (click)="clickotp()" class="btn btn-panel btn-hover">
+                      Log In
+                    </button>
+                </div>
+                <div class="text-muted" *ngIf="var1"><b style="font-weight: 600; padding-left: 15px; color: black;">Scroll to enter the OTP.</b>
+
+                    <div class="my-4">
+  
+                      <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="configOptions"></ng-otp-input>
+  
+                    </div>
+  
+                    <div class="text-center"><button class="btn btn-panel btn-hover" [ngClass]="btnStatus">{{ this.inputDigitLeft }}</button></div>
+  
+                    </div>
+            </div>
+            
+        </ul>
+</div>
+
+
+<!-- <div class="container-fluid " *ngIf="var1">
+    <div class="wrapper vh-100">
+      <div class="row align-items-center h-100">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="mx-auto" style="width: 400px">
+            <div class="card p-4">
+              <div class="d-flex justify-content-center">
+                <div class="icon-block">
+                  <img src="https://img.icons8.com/ios/50/2E9AFE/lock-2.png"/>
+                </div>
+              </div>
+              <div class="text-center my-4">
+                <h2 class="fw-bold">Easy peasy</h2>
+                <div class="text-muted">Enter 6-digit code from yout two factor authentication APP.</div>
+              </div>
+              <div class="my-4">
+                <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="configOptions"></ng-otp-input>
+              </div>
+              <button class="btn btn-lg w-100 mt-3 mb-4 py-3" [ngClass]="btnStatus">{{ this.inputDigitLeft }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+

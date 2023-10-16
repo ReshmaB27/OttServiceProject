@@ -1,0 +1,77 @@
+<body>
+  <section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: black">
+            Welcome to<br />
+            <span style="color: #cb1717">Protel,</span>
+          </h1>
+          <p class="mb-4 opacity-70" style="color: black; text-align: justify;">
+            through lightning-fast internet, crystal-clear voice services, or cutting-edge solutions for your business.
+            experience telecom like never before.
+            Welcome to the future of connectivity; welcome to Protel.
+          </p>
+          <b>Don't have an account?</b>&nbsp;&nbsp;
+          <button type="submit" class="btn btn-panel btn-hover" routerLink="/reg">
+            Sign Up
+          </button>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+          <div class="card bg-glass">
+            <div class="card-body">
+
+              <form #loginForm="ngForm" [formGroup]="logIn" (ngSubmit)="checkPhoneNumber()">
+                <div class="row">
+                  <h1 class="my-5 display-5 fw-bold ls-tight">Login</h1>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3">Phone Number</label>
+                  <input type="text" id="phone" class="form-control" formControlName="phone" name="phoneNumber" [(ngModel)]="phoneNumber"/>
+                  <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">
+                    <div *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+                    <div *ngIf="phone?.errors?.['pattern']">Invalid phone number format.</div>
+                  </div>
+                </div>
+
+                <!-- <div class="form-outline mb-4">
+                  <label class="form-label" for="phone">Phone Number</label>
+                  <input type="text" id="phone" class="form-control" formControlName="phone" />
+                  <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">
+                    <div *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+                    <div *ngIf="phone?.errors?.['pattern']">Invalid phone number format.</div>
+                  </div>
+                </div> -->
+
+                <div class="text-center">
+                  <button type="submit" (click)="generateOTP()"  class="btn btn-panel btn-hover">
+                    Login
+                  </button>
+                </div>
+
+                <div *ngIf="error" class="alert">
+                  &nbsp;&nbsp;{{ error }}
+                </div>
+
+                <div *ngIf="var1" class="text-muted">
+                  Enter 6-digit code from your two-factor authentication APP
+                  <div class="my-4">
+                    <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="configOptions"></ng-otp-input>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-panel btn-hover" (click)="validateOTP()" [ngClass]="btnStatus" routerLink="/loginhome">{{ this.inputDigitLeft }}</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

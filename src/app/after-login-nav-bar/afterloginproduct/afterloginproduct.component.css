@@ -1,0 +1,34 @@
+.h4 {
+    margin: 65px;
+}
+
+.top-center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make container full viewport height */
+}
+
+.btn-panel {
+    background-color: transparent;
+    color: black;
+    text-align: center; /* Align text at the center */
+    margin-top: -130px;
+    width: 340px; /* Set a fixed width for the buttons */
+    height: 60px; /* Increase the button height */
+    border: none; /* Remove the border */
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #ab1f06;; /* Red background on hover */
+    color: white; /* White text color on hover */
+}
+
+
+
+*{
+    height: 4rem;
+    width: 21.15rem;
+}

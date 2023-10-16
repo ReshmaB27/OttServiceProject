@@ -1,0 +1,67 @@
+.background-radial-gradient {
+    background-color:white;
+    height: 900px;
+    background-image: radial-gradient(650px circle at 0% 0%,
+    hsl(218, 36%, 96%) 15%,
+    hsl(225, 17%, 82%) 35%,
+    hsl(222, 5%, 52%) 75%,
+    hsl(222, 7%, 46%) 80%,
+        transparent 100%),
+      radial-gradient(1250px circle at 100% 100%,
+      /* hsl(224, 7%, 33%) 15%,
+      hsl(217, 6%, 60%) 35%,
+      hsl(225, 3%, 76%) 75%,
+      hsl(218, 36%, 96%) 80%, */
+      hsl(218, 36%, 96%) 15%,
+      hsl(225, 17%, 82%) 35%,
+      hsl(222, 5%, 52%) 75%,
+    hsl(222, 7%, 46%) 80%,
+
+        transparent 100%);
+  }
+
+  #radius-shape-1 {
+    height: 220px;
+    width: 220px;
+    top: -60px;
+    left: -130px;
+    background: radial-gradient(crimson,#cb1717,#771503,transparent 110%);
+    overflow: hidden;
+  }
+
+  #radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: -60px;
+    right: -110px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(crimson,#cb1717,#771503,transparent 110%);
+    overflow: hidden;
+  }
+.card-body{
+    height: fit-content;
+    width: fit-content;
+}
+  .bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+  }
+.form-control{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  .btn-panel {
+    background-color: black;
+    color: white;
+    text-align: center; /* Align text at the center */
+    width: 170px; /* Set a fixed width for the buttons */
+    height: 50px; /* Increase the button height */
+    border: none; /* Remove the border */
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+}
+
+.btn:hover {
+    background-color: #ab1f06; /* Red background on hover */
+    color: white; /* White text color on hover */
+}

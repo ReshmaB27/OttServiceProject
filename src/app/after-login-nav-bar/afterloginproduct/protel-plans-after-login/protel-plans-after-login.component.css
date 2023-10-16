@@ -1,0 +1,63 @@
+.card-container {
+    display: inline-block; /* Display cards next to each other */
+    padding-top: 45px;
+    margin-left: 25px;
+    margin-right: 5px; /* Add some margin between cards */
+    margin-bottom: 10px;
+    margin-top: -40px;
+}
+
+.col-text-start{
+    width: 27rem;
+    
+}
+
+.col-text-end{
+    width:10rem;
+    float: right;
+}
+
+/* Style for each individual card */
+.card {
+    width: 23rem;
+    min-height: 30rem; /* Set a minimum height to fit content */
+    margin-right: 20px; /* Add some space below each card */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.card-body
+{
+    max-height: 10rem;
+    overflow-y: auto;
+}
+.card-text{
+    text-align: center;
+    font-weight: bold;
+}
+.card-title{
+    text-align: center;
+    color: #ab1f06;
+}
+img{
+    margin-right: .5rem;
+}
+
+.list-group-item
+{
+    height: fit-content;
+}
+.btn-panel {
+    background-color: black;
+    color: white;
+    text-align: center; /* Align text at the center */
+    width: 170px; /* Set a fixed width for the buttons */
+    height: 50px; /* Increase the button height */
+    border: none; /* Remove the border */
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+}
+
+.btn:hover {
+    background-color: #ab1f06; /* Red background on hover */
+    color: white; /* White text color on hover */
+};
